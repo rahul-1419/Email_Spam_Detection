@@ -1,50 +1,100 @@
-# 📧 Email Spam Detection
+# 📧 Email Spam Detection using Machine Learning & NLP
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
-![NLP](https://img.shields.io/badge/NLP-NLTK-green)
+## 📌 Project Overview
+This project builds an Email Spam Detection system using Natural Language Processing (NLP) and Machine Learning algorithms. Text messages are processed, cleaned, and transformed into numerical features to classify emails as Spam or Ham (Not Spam).
 
-## 📝 Project Overview
-This repository contains a Machine Learning project designed to classify emails as **Spam** or **Ham (Not Spam)**. By leveraging Natural Language Processing (NLP) techniques and classification algorithms, this project efficiently detects unwanted, promotional, or malicious emails and separates them from legitimate ones.
+---
 
-## 🚀 Features
-- **Text Preprocessing:** Cleaning email text by removing punctuation, converting to lowercase, tokenization, stop-word removal, and stemming/lemmatization.
-- **Feature Extraction:** Converting raw text data into numerical features using techniques like `TF-IDF Vectorizer` or `CountVectorizer`.
-- **Machine Learning Models:** Training and evaluating algorithms such as **Multinomial Naive Bayes**, **Logistic Regression**, or **Support Vector Machines (SVM)**.
-- **Performance Evaluation:** Measuring success through Accuracy, Precision, Recall, F1-Score, and Confusion Matrices.
+## 📊 Dataset Description
+The dataset contains labeled email/SMS messages with:
 
-## 🛠️ Tech Stack
-- **Programming Language:** Python
-- **Data Manipulation:** Pandas, NumPy
-- **Machine Learning & NLP:** Scikit-Learn, NLTK (Natural Language Toolkit)
-- **Data Visualization:** Matplotlib, Seaborn
+- **Target**: Spam or Ham label  
+- **Text**: Message content  
 
-## 📂 Dataset
-The model is trained on a labeled dataset containing text from various emails and SMS messages. 
-> **Note:** Place your downloaded dataset (e.g., `spam.csv`) into the root directory or a `data/` folder before running the scripts.
+---
 
-## ⚙️ Installation & Setup
+## 🔍 Exploratory Data Analysis (EDA)
+Key analyses performed:
 
-To run this project locally, follow these steps:
+- Spam vs Ham distribution visualization  
+- Text length and sentence pattern analysis  
+- Correlation analysis between text features  
+- Word frequency analysis for spam and ham messages  
+- WordCloud visualization of common spam and ham terms  
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/rahul-1419/Email_Spam_Detection.git
-   cd Email_Spam_Detection
+---
 
-2. **Create a virtual environment (Recommended):**
-   ```bash
-   conda create venv python=3.10 -y
-   
-3. **Install the required dependencies:**
-   ```bash
-   pip install requirements.txt
+## 🧹 Data Preprocessing & NLP
+- Removed duplicate and irrelevant columns  
+- Label encoding of target variable  
+- Text cleaning (lowercasing, stopword removal, punctuation removal)  
+- Lemmatization and stemming  
+- Feature engineering:
+  - Character count
+  - Word count
+  - Sentence count
 
-4. **Run the Project:**
+---
 
-📊 Evaluation & Results
+## 🔤 Text Vectorization
+- Applied **TF-IDF Vectorization** to convert text into numerical features  
+- Limited to top 3000 important words  
 
-Algorithm Used: Multinomial Naive Bayes
-Accuracy: ~96%
-Precision: Highly prioritized to minimize false positives (we don't want important emails going to the spam folder!).
+---
 
+## 🤖 Machine Learning Models Tested
+Multiple classification algorithms were trained and compared:
+
+- Naive Bayes (Gaussian, Multinomial, Bernoulli)
+- Logistic Regression
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
+- Decision Tree
+- Random Forest
+- AdaBoost
+- Bagging Classifier
+- Extra Trees
+- Gradient Boosting
+
+---
+
+## 📈 Model Evaluation
+Models evaluated using:
+
+- Accuracy Score  
+- Precision Score  
+- Confusion Matrix  
+
+Multinomial Naive Bayes achieved strong performance for spam detection.
+
+---
+
+## 💾 Model Files
+- Saved TF-IDF Vectorizer (`vectorizer.pkl`)
+- Saved Trained Model (`model.pkl`)
+
+---
+
+## 🛠 Tech Stack
+**Language:** Python  
+**Libraries:** Pandas, NumPy, Matplotlib, Seaborn  
+**NLP Tools:** NLTK  
+**Machine Learning:** Scikit-learn  
+**Model Saving:** Pickle  
+
+---
+
+## 🚀 Project Workflow
+Data Cleaning → NLP Processing → Feature Engineering → TF-IDF → Model Training → Evaluation → Model Saving
+
+---
+
+## 🎯 Business Use Case
+- Automated spam email filtering  
+- Improves inbox management systems  
+- Reduces phishing and unwanted message risks  
+
+---
+
+## 🏷 Tags
+`Machine Learning` `NLP` `Spam Detection` `Text Classification` `Python`
